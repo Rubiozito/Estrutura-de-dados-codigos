@@ -1,14 +1,14 @@
 public class App {
     public static void selections(int[] lista){
         for (int i = 0; i < lista.length; i++){
-            int index = i;
+            int temp = i;
             for(int j = i+1; j < lista.length; j++){
-                if(lista[j] < lista[index]){
-                    index = j;
+                if(lista[j] < lista[temp]){
+                    temp = j;
                 }
             }
-            int menor = lista[index];
-            lista[index] = lista[i];
+            int menor = lista[temp];
+            lista[temp] = lista[i];
             lista[i] = menor;
         }
     }
