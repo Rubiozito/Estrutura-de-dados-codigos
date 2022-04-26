@@ -1,6 +1,3 @@
-// Rafael Rubio Carnes 20.00611-0
-// Matheus Coelho Rocha 20.00391-9
-
 import java.util.Scanner;
 
 public class App {
