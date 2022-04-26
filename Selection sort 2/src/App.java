@@ -1,3 +1,6 @@
+// Rafael Rubio Carnes 20.00611-0
+// Matheus Coelho Rocha 20.00391-9
+
 import java.util.Scanner;
 
 public class App {
@@ -13,7 +16,7 @@ public class App {
         for(i=0; i<size; i++){
             vet[i] = scan.nextInt();
         }
-        System.out.println("Ordenando o vator...");
+        System.out.println("Ordenando o vetor...");
 
         for(i=0; i<size; i++){
             for(j= i+1;j<size; j++){
