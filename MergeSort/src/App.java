@@ -1,17 +1,53 @@
 public class App {
-    public static void main(String[] args) throws Exception {
-        int[] vetor = {14, 31, 72, 27, 13, 60, 90, 1};
-        System.out.println("Vetor desordenado");
-        for(int i = 0; i < vetor.length; i++){
-            System.out.print(vetor[i] + " ");
+    
+    public static void mergeSort(int[] a, int n) {
+        if (n < 2) {
+            return;
         }
+        int meio = n / 2;
+        int[] e = new int[meio];
+        int[] d = new int[n -meio];
+    
+        for (int i = 0; i <meio; i++) {
+            e[i] = a[i];
+        }
+        for (int i =meio; i < n; i++) {
+            d[i -meio] = a[i];
+        }
+        mergeSort(e,meio);
+        mergeSort(d, n -meio);
+    
+        merge(a, e, d,meio, n -meio);
+    }
+
+    public static void merge(
+  int[] a, int[] e, int[] d, int esq, int dir) {
+ 
+    int i = 0, j = 0, k = 0;
+    while (i < esq && j < dir) {
+        if (e[i] <= d[j]) {
+            a[k++] = e[i++];
+        }
+        else {
+            a[k++] = d[j++];
+        }
+    }
+    while (i < esq) {
+        a[k++] = e[i++];
+    }
+    while (j < dir) {
+        a[k++] = d[j++];
+    }
+}
+    public static void main(String[] args) throws Exception {
+        int[] actual = { 5, 1, 6, 2, 3, 4 };
+        for(int i=0; i<actual.length; i ++){
+            System.out.print(actual[i] + " ");
+        }
+        mergeSort(actual, actual.length);
         System.out.println();
-        System.out.println("Vetor ordenado:");
-        MergeSort.mergeSort(vetor, vetor.length);
-        System.out.println();
-        
-        for(int i = 0; i < vetor.length; i++){
-            System.out.print(vetor[i] + " ");
+        for(int i=0; i<actual.length; i ++){
+            System.out.print(actual[i] + " ");
         }
     
     }
