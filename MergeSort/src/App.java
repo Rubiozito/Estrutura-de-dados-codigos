@@ -1,3 +1,6 @@
+//Rafael Rubio 20.00611-0
+//Matheus Coelho Rocha 20.00391-9
+
 public class App {
     
     public static void mergeSort(int[] a, int n) {
